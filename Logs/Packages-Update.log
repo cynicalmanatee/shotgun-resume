@@ -45,7 +45,11 @@ The following packages were added:
   com.unity.timeline@1.4.8
   com.unity.ugui@1.0.0
 
+<<<<<<< HEAD
 === Fri Jul  2 15:52:09 2021
+=======
+=== Fri Jul  2 14:03:46 2021
+>>>>>>> player_weapon
 
 Packages were changed.
 Update Mode: updateDependencies
