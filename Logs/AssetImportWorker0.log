@@ -212,3 +212,12 @@ Received Import Request.
 Start importing Assets/Manager-04.fbx using Guid(d68fcdb214e91b14193a47235328c104) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8025355a6e619cc7c09c4eace149d420') in 0.018116 seconds 
   Import took 0.021549 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 7314.456799 seconds.
+  path: Assets/bossman.blend
+  artifactKey: Guid(95187d25b4ead7d4987869eff5474ac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/bossman.blend using Guid(95187d25b4ead7d4987869eff5474ac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '733444d325e47d1d197e62bfd9900af6') in 0.013050 seconds 
+  Import took 0.016771 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
