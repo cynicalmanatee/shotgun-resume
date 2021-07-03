@@ -5,6 +5,7 @@
 /[Bb]uilds/
 /Assets/AssetStoreTools*
 /Assets/Prefabs*
+/Assets/Logs
 
 # Visual Studio 2015 cache directory
 /.vs/
