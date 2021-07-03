@@ -7,24 +7,18 @@ public class CameraSwap : MonoBehaviour
     public GameObject[] Cameras;
 
     int currentCam;
-    static bool started;
 
     // Start is called before the first frame update
     void Start()
     {
         currentCam = 0;
         setCam(currentCam);
-        started = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey)
-        {
-            toggleCam();
-            started = true;
-        }
+
     }
 
     public void setCam(int idx)
@@ -44,12 +38,17 @@ public class CameraSwap : MonoBehaviour
 
     public void toggleCam()
     {
-        if (!started)
-        {
-            currentCam++;
-            if (currentCam > Cameras.Length - 1)
-                currentCam = 0;
-            setCam(currentCam);
+        currentCam++;
+        if (currentCam > Cameras.Length - 1)
+            currentCam = 0;
+        setCam(currentCam);
+        toggleCursorLock();
+    }
+
+    public void toggleCursorLock() {
+        if (Cursor.lockState == CursorLockMode.Locked) {
+            Cursor.lockState = CursorLockMode.None;
+        } else {
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
