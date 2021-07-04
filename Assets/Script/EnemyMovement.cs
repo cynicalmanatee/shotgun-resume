@@ -44,7 +44,6 @@ public class EnemyMovement : MonoBehaviour
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-        Debug.Log("player is " + whatIsPlayer);
 
         if (!playerInSightRange && !playerInAttackRange)
         {
@@ -53,7 +52,7 @@ public class EnemyMovement : MonoBehaviour
         }
         if (playerInSightRange && !playerInAttackRange)
         {
-            Debug.Log("chase");
+            // Debug.Log("chase");
             ChasePlayer();
             animator.SetBool("isAlert", true);
         }
@@ -61,7 +60,7 @@ public class EnemyMovement : MonoBehaviour
         if (playerInAttackRange && playerInAttackRange)
         {
             AttackPlayer();
-            Debug.Log("attk");
+            // Debug.Log("attk");
             animator.SetBool("isAlert", false);
         }
     }

@@ -65,11 +65,24 @@ public class Gun : MonoBehaviour
             {
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
-
-            GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            Vector3 spread = new Vector3(UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2));
+            Vector3 spread2 = new Vector3(UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2));
+            Vector3 spread3 = new Vector3(UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2));
+            Vector3 spread4 = new Vector3(UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2));
+            Vector3 spread5 = new Vector3(UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2));
+            GameObject impactGO = Instantiate(impactEffect, hit.point + spread, Quaternion.LookRotation(hit.normal));
+            GameObject impactGO2 = Instantiate(impactEffect, hit.point + spread2, Quaternion.LookRotation(hit.normal));
+            GameObject impactGO3 = Instantiate(impactEffect, hit.point + spread3, Quaternion.LookRotation(hit.normal));
+            GameObject impactGO4 = Instantiate(impactEffect, hit.point + spread4, Quaternion.LookRotation(hit.normal));
+            GameObject impactGO5 = Instantiate(impactEffect, hit.point + spread5, Quaternion.LookRotation(hit.normal));
             Destroy(impactGO, 50f);
+            Destroy(impactGO2, 50f);
+            Destroy(impactGO3, 50f);
+            Destroy(impactGO4, 50f);
+            Destroy(impactGO5, 50f);
         }
     }
+
 
     void Reload() {
         ammo.ReloadAmmo();
