@@ -10,7 +10,7 @@ public class ball : MonoBehaviour
 
     private Transform player;
 
-    public int health;
+    public float health = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -38,5 +38,20 @@ public class ball : MonoBehaviour
     {
         Vector3 direction = player.position - this.transform.position;
         rb.velocity = (direction * (speed)) / (direction.magnitude);
+    }
+
+    public void TakeDamage (float amount)
+    {
+        health -= amount;
+        if (health <= 0f)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("destroyed");
+        Destroy(gameObject);
     }
 }
