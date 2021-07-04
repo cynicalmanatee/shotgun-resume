@@ -6,11 +6,9 @@ public class Gun : MonoBehaviour
     public float range = 100f;
     public float fireRate = 2f;
     public float impactForce = 10f;
-
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
-
     public float nextFire = 0.0f;
 
     // Update is called once per frame
@@ -18,8 +16,13 @@ public class Gun : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
         {
-            nextFire = Time.time + fireRate;
-            Shoot();
+            if (Ammo.remainingAmmo >= 1) {
+                nextFire = Time.time + fireRate;
+                Shoot();
+                --Ammo.remainingAmmo;
+            } else {
+                Debug.Log("No ammo!");
+            }
         }
     }
 
