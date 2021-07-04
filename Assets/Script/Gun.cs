@@ -5,7 +5,7 @@ public class Gun : MonoBehaviour
 {
     public float damage = 10f;
     public float range = 100f;
-    public float fireRate = 2f;
+    public float fireRate;
     public float impactForce = 10f;
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
@@ -19,7 +19,7 @@ public class Gun : MonoBehaviour
 
     void Start()
     {
-        fireRate = gameManager.getFireRate();
+        fireRate = PlayerStats.fireRate;
     }
 
     void Update()
