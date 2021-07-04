@@ -9,6 +9,8 @@ public class EnemyMovement : MonoBehaviour
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
 
+    public float health;
+
     //patrolling
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -45,13 +47,11 @@ public class EnemyMovement : MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange)
         {
             Patroling();
-            Debug.Log("patrol");
             animator.SetBool("isAlert", false);
         }
         if (playerInSightRange && !playerInAttackRange)
         {
             ChasePlayer();
-            Debug.Log("chase");
             animator.SetBool("isAlert", true);
         }
 
