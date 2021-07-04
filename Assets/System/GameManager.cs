@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text displayMoney;
 
     // Player stat parameters
-    public int fireRate;
+    public float fireRate;
     public int shotCount;
     public float interviewChn;
     public int maxHealth;
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         paused = true;
 
         // Initialize base player parameters
-        fireRate = 10;
+        fireRate = 5.0f;
         shotCount = 1;
         interviewChn = 0.05f;
         maxHealth = 50;
@@ -51,11 +51,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        // if (Input.GetKey(KeyCode.Escape))
-        // {
-        //     Debug.Log("Escape is being pressed.");
-        //     // Some sort of pause menu functionality here
-        // }
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Debug.Log("Escape is being pressed.");
+            // Some sort of pause menu functionality here
+        }
 
         // Increment timer if not paused
         if (!paused)
@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
         currentJob = job;
     }
 
-    public void setFireRate(int val)
+    public void setFireRate(float val)
     {
         fireRate = val;
     }
@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour
         return currentJob;
     }
 
-    public int getFireRate()
+    public float getFireRate()
     {
         return fireRate;
     }
