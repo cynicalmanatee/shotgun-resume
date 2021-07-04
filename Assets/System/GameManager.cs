@@ -54,8 +54,6 @@ public class GameManager : MonoBehaviour
             // Some sort of pause menu functionality here
         }
 
-
-
         // Increment timer if not paused
         if (!paused)
         {
@@ -70,7 +68,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Returns the current timer value rounded to the nearest integer
-    private float getCurrentTime()
+    public float getCurrentTime()
     {
         return Mathf.Round(timeLimit - timer);
     }

@@ -59,7 +59,6 @@ public class Upgrades : MonoBehaviour
         PlayerStats.shotCount = 1 + upgrades[1];
         PlayerStats.interviewChn = 0.05f + 0.05f * (float)upgrades[2];
         PlayerStats.maxHealth = 50 + (10 * upgrades[3]);
-
         gameManager.debugStats();
     }
 
