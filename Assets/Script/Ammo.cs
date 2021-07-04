@@ -6,15 +6,18 @@ using UnityEngine.UI;
 public class Ammo : MonoBehaviour
 {
     public int maxAmmo = 12;
+
     public int remainingAmmo = 12;
+
     public bool isFiring;
+
     public Text ammoDisplay;
 
     void Start()
     {
         maxAmmo = 12;
         remainingAmmo = 12;
-        ammoDisplay.text = remainingAmmo + "/" + maxAmmo;
+        // ammoDisplay.text = remainingAmmo + "/" + maxAmmo;
     }
 
     void Update()
@@ -27,12 +30,10 @@ public class Ammo : MonoBehaviour
         // {
         //     isFiring = false;
         // }
-
         // if (isFiring && remainingAmmo > 0)
         // {
         //     ammoDisplay.text = remainingAmmo + "/" + maxAmmo;
         // }
-
         // if (Input.GetMouseButtonDown(1) && !isFiring)
         // {
         //     ammoDisplay.text = "Reloading...";
@@ -53,5 +54,4 @@ public class Ammo : MonoBehaviour
         --remainingAmmo;
         ammoDisplay.text = remainingAmmo + "/" + maxAmmo;
     }
-
 }

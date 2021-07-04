@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 7050660099297252178}
   - component: {fileID: 7050660099297252140}
   - component: {fileID: 7050660099297252179}
+  - component: {fileID: 8158545640000532662}
   m_Layer: 8
   m_Name: Enemy_small4
   m_TagString: Untagged
@@ -115,6 +116,19 @@ MonoBehaviour:
   attackRange: 1
   playerInSightRange: 0
   playerInAttackRange: 0
+--- !u!114 &8158545640000532662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050660099297252177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819df5763b213ff40b04205969003ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
 --- !u!1001 &4874593016741655397
 PrefabInstance:
   m_ObjectHideFlags: 0
