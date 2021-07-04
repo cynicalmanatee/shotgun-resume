@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Ammo : MonoBehaviour
 {
     public int maxAmmo = 12;
-    public static int remainingAmmo = 12;
+    public int remainingAmmo = 12;
     public bool isFiring;
     public Text ammoDisplay;
 

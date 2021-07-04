@@ -11,15 +11,17 @@ public class Gun : MonoBehaviour
     public GameObject impactEffect;
     public float nextFire = 0.0f;
 
+    public Ammo ammo;
+
     // Update is called once per frame
     void Update() {
 
         if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
         {
-            if (Ammo.remainingAmmo >= 1) {
+            if (ammo.remainingAmmo >= 1) {
                 nextFire = Time.time + fireRate;
                 Shoot();
-                --Ammo.remainingAmmo;
+                --ammo.remainingAmmo;
             } else {
                 Debug.Log("No ammo!");
             }
