@@ -2141,3 +2141,12 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 180.773203 seconds.
+  path: Assets/Alert.anim
+  artifactKey: Guid(7a67a190e3b6b7946904f9fc79a3d2d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Alert.anim using Guid(7a67a190e3b6b7946904f9fc79a3d2d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbf10cca257bb832bfbcf6e053fdf8ab') in 0.027243 seconds 
+  Import took 0.030613 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
