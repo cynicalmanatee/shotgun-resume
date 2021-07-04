@@ -2,58 +2,69 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
-public class Upgrades : MonoBehaviour {
-
+public class Upgrades : MonoBehaviour
+{
     public GameManager gameManager;
 
     public GameObject panel;
     public bool displayPanel;
-    public UpgradeSect[] upgradeSections;
 
     // Upgrade list and costs; each position of the array will correspond to the level of a specific upgrade
-    public int[] upgradeCost = new int[5]{100, 200, 300, 400, 500};
-    public int[] upgrades = new int[4]{0,0,0,0};
+    public int[] upgradeCost = new int[5] { 100, 200, 300, 400, 500 };
+    public int[] upgrades = new int[4] { 0, 0, 0, 0 };
+    public int[] maxLevels = new int[4] { 5, 5, 5, 5 };
+    public TMP_Text[] currentLevels = new TMP_Text[4];
+    public Button[] upgradeButtons = new Button[4];
 
-    // Maybe move this logic elsewhere?
-    public int fireRate;
-    public float interviewChce;
-    public int fireCount;
-    public int maxHealth;
-
-    void Start() {
+    void Start()
+    {
         displayPanel = false;
         panel.SetActive(false);
-
-        // Initialize base player parameters
-        fireRate = 10;
-        interviewChce = 0.05f;
-        fireCount = 1;
-        maxHealth = 50;
-
         updateUpgrades();
-    }
 
-    public bool ableToUpgrade(int money, int currentLevel) {
-        return (currentLevel != 5 && money >= upgradeCost[currentLevel]);
-    }
-
-    // Increments a specific upgrade by a set amount
-    public void addUpgrade(int position) {
-        if (ableToUpgrade(gameManager.getMoney(), upgrades[position])) {
-            gameManager.changeMoney(upgradeCost[upgrades[position]]);
-            ++upgrades[position];
+        //Code derived from: https://answers.unity.com/questions/1376530/add-listeners-to-array-of-buttons.html
+        for (int i = 0; i < upgradeButtons.Length; i++)
+        {
+            int closureIndex = i; // Prevents the closure problem
+            upgradeButtons[closureIndex].onClick.AddListener(() => addUpgrade(closureIndex));
         }
     }
 
-    public void updateUpgrades() {
-        fireRate = 1 + upgrades[0];
-        interviewChce = 0.05f + 0.05f * (float) upgrades[1];
-        fireCount = 1 + upgrades[2];
-        maxHealth = 50 + (10 * upgrades[3]);
+    public bool ableToUpgrade(int money, int index)
+    {
+        return (upgrades[index] < maxLevels[index] && money >= upgradeCost[upgrades[index]]);
     }
 
-    public void toggleDisplay() {
+    // Increments a specific upgrade by a set amount
+    public void addUpgrade(int position)
+    {
+        if (ableToUpgrade(gameManager.getMoney(), position))
+        {
+            gameManager.changeMoney(-1 * upgradeCost[upgrades[position]]);
+            ++upgrades[position];
+            updateUpgrades();
+        }
+    }
+
+    public void updateUpgrades()
+    {
+        for (int i = 0; i < upgrades.Length; i++)
+        {
+            currentLevels[i].text = upgrades[i] + "/" + maxLevels[i];
+        }
+
+        gameManager.setFireRate(1 + upgrades[0]);
+        gameManager.setShotCount(1 + upgrades[1]);
+        gameManager.setInterviewChn(0.05f + 0.05f * (float)upgrades[2]);
+        gameManager.setMaxHealth(50 + (10 * upgrades[3]));
+
+        gameManager.debugStats();
+    }
+
+    public void toggleDisplay()
+    {
         displayPanel = !displayPanel;
         panel.SetActive(displayPanel);
     }
