@@ -9,6 +9,8 @@ public class EnemyMovement : MonoBehaviour
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
 
+    public float health;
+
     //patrolling
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -24,6 +26,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("initialize");
         player = GameObject.Find("First Person Player").transform;
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
@@ -41,17 +44,17 @@ public class EnemyMovement : MonoBehaviour
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        Debug.Log("player is " + whatIsPlayer);
 
         if (!playerInSightRange && !playerInAttackRange)
         {
             Patroling();
-            Debug.Log("patrol");
             animator.SetBool("isAlert", false);
         }
         if (playerInSightRange && !playerInAttackRange)
         {
-            ChasePlayer();
             Debug.Log("chase");
+            ChasePlayer();
             animator.SetBool("isAlert", true);
         }
 
