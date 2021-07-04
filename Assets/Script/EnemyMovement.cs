@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 public class EnemyMovement : MonoBehaviour
 {
-
+    Animator animator;
     public NavMeshAgent agent;
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
@@ -24,9 +24,9 @@ public class EnemyMovement : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("initialize");
         player = GameObject.Find("First Person Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
     }
 
 
@@ -42,9 +42,25 @@ public class EnemyMovement : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInAttackRange && playerInAttackRange) AttackPlayer();
+        if (!playerInSightRange && !playerInAttackRange)
+        {
+            Patroling();
+            Debug.Log("patrol");
+            animator.SetBool("isAlert", false);
+        }
+        if (playerInSightRange && !playerInAttackRange)
+        {
+            ChasePlayer();
+            Debug.Log("chase");
+            animator.SetBool("isAlert", true);
+        }
+
+        if (playerInAttackRange && playerInAttackRange)
+        {
+            AttackPlayer();
+            Debug.Log("attk");
+            animator.SetBool("isAlert", false);
+        }
     }
 
     private void Patroling()
