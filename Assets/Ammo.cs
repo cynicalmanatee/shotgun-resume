@@ -26,7 +26,7 @@ public class Ammo : MonoBehaviour
             isFiring = false;
         }
 
-        if (isFiring && remainingAmmo > 0)
+        if (isFiring && remainingAmmo >= 0)
         {
             ammoDisplay.text = remainingAmmo + "/" + maxAmmo;
         }
