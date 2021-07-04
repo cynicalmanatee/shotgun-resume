@@ -10,6 +10,8 @@ public class ball : MonoBehaviour
 
     private Transform player;
 
+    public int health;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,15 @@ public class ball : MonoBehaviour
             (direction.magnitude * direction.magnitude) / (speed * speed);
         direction = direction / factor;
         rb.velocity = direction;
+    }
+
+    void OnMouseDown()
+    {
+        health--;
+        if (health < 1)
+        {
+            Destroy (gameObject);
+        }
     }
 
     // Update is called once per frame

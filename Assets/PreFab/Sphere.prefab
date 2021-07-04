@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
+  health: 3
 --- !u!114 &819285297289005687
 MonoBehaviour:
   m_ObjectHideFlags: 0

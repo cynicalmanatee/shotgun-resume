@@ -8,6 +8,8 @@ public class BossSpawn : MonoBehaviour
 
     public float respawnTime = 1.0f;
 
+    public float spawnArea = 100f;
+
     void Start()
     {
         StartCoroutine(attackWave());
@@ -19,8 +21,8 @@ public class BossSpawn : MonoBehaviour
         Vector3 me = transform.position;
         Vector3 spawn =
             new Vector3(me.x - 20,
-                Random.Range(0, 40f),
-                Random.Range(me.z - 40f, me.z + 40f));
+                Random.Range(0, spawnArea),
+                Random.Range(me.z - spawnArea, me.z + spawnArea));
         a.transform.position = spawn;
         Debug.Log("Something Spawned");
     }
