@@ -40,9 +40,9 @@ public class Upgrades : MonoBehaviour
     // Increments a specific upgrade by a set amount
     public void addUpgrade(int position)
     {
-        if (ableToUpgrade(gameManager.getMoney(), position))
+        if (ableToUpgrade(PlayerStats.money, position))
         {
-            gameManager.changeMoney(-1 * upgradeCost[upgrades[position]]);
+            PlayerStats.changeMoney(-1 * upgradeCost[upgrades[position]]);
             ++upgrades[position];
             updateUpgrades();
         }
@@ -55,10 +55,10 @@ public class Upgrades : MonoBehaviour
             currentLevels[i].text = upgrades[i] + "/" + maxLevels[i];
         }
 
-        gameManager.setFireRate(2.0f - ((float)upgrades[0] * 0.2f));
-        gameManager.setShotCount(1 + upgrades[1]);
-        gameManager.setInterviewChn(0.05f + 0.05f * (float)upgrades[2]);
-        gameManager.setMaxHealth(50 + (10 * upgrades[3]));
+        PlayerStats.fireRate = 2.0f - ((float)upgrades[0] * 0.2f);
+        PlayerStats.shotCount = 1 + upgrades[1];
+        PlayerStats.interviewChn = 0.05f + 0.05f * (float)upgrades[2];
+        PlayerStats.maxHealth = 50 + (10 * upgrades[3]);
 
         gameManager.debugStats();
     }
