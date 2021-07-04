@@ -5,32 +5,29 @@ using UnityEngine.UI;
 
 public class Ammo : MonoBehaviour
 {
-    public int maxAmmo;
-    public int remainingAmmo;
+    public int maxAmmo = 12;
+    public static int remainingAmmo = 12;
     public bool isFiring;
     public Text ammoDisplay;
 
     void Start()
     {
-
+        maxAmmo = 12;
+        remainingAmmo = 12;
+        ammoDisplay.text = remainingAmmo + "/" + maxAmmo;
     }
 
     void Update()
     {
-
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("Fire1"))
         {
             isFiring = true;
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
+        } else {
             isFiring = false;
         }
 
         if (isFiring && remainingAmmo > 0)
         {
-            --remainingAmmo;
             ammoDisplay.text = remainingAmmo + "/" + maxAmmo;
         }
 
