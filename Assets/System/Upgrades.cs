@@ -55,7 +55,7 @@ public class Upgrades : MonoBehaviour
             currentLevels[i].text = upgrades[i] + "/" + maxLevels[i];
         }
 
-        gameManager.setFireRate(1 + upgrades[0]);
+        gameManager.setFireRate(2.0f - ((float)upgrades[0] * 0.2f));
         gameManager.setShotCount(1 + upgrades[1]);
         gameManager.setInterviewChn(0.05f + 0.05f * (float)upgrades[2]);
         gameManager.setMaxHealth(50 + (10 * upgrades[3]));

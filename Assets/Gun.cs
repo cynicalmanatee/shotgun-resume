@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class Gun : MonoBehaviour
 {
@@ -11,24 +12,43 @@ public class Gun : MonoBehaviour
     public GameObject impactEffect;
     public float nextFire = 0.0f;
 
+    public Ammo ammo;
+    public GameManager gameManager;
+
     // Update is called once per frame
-    void Update() {
+
+    void Start()
+    {
+        fireRate = gameManager.getFireRate();
+    }
+
+    void Update()
+    {
 
         if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
         {
-            if (Ammo.remainingAmmo >= 1) {
+            if (ammo.remainingAmmo >= 1)
+            {
                 nextFire = Time.time + fireRate;
                 Shoot();
-                --Ammo.remainingAmmo;
-            } else {
+            }
+            else
+            {
                 Debug.Log("No ammo!");
             }
         }
+
+        if (Input.GetButtonDown("Fire2")) {
+            Reload();
+            nextFire = Time.time + 3f;
+            Debug.Log("RELOADING...");
+        }
     }
 
-    void Shoot ()
+    void Shoot()
     {
         muzzleFlash.Play();
+        ammo.ShootAmmo();
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
@@ -49,6 +69,10 @@ public class Gun : MonoBehaviour
             GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactGO, 50f);
         }
+    }
+
+    void Reload() {
+        ammo.ReloadAmmo();
     }
 }
 
