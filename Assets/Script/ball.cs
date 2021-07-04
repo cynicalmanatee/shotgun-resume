@@ -37,10 +37,13 @@ public class ball : MonoBehaviour
     void Update()
     {
         Vector3 direction = player.position - this.transform.position;
+        transform
+            .rotation
+            .SetFromToRotation(transform.position, player.position);
         rb.velocity = (direction * (speed)) / (direction.magnitude);
     }
 
-    public void TakeDamage (float amount)
+    public void TakeDamage(float amount)
     {
         health -= amount;
         if (health <= 0f)
@@ -52,6 +55,6 @@ public class ball : MonoBehaviour
     void Die()
     {
         Debug.Log("destroyed");
-        Destroy(gameObject);
+        Destroy (gameObject);
     }
 }
