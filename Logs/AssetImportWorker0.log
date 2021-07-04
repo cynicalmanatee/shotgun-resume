@@ -1489,3 +1489,11 @@ Received Import Request.
 Start importing Assets/Script using Guid(38733ccb6deddaf498134a84e7e9d2a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55e45233014f32f6286bcaa3a365aa45') in 0.021408 seconds 
   Import took 1.029922 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 95.336084 seconds.
+  path: Assets/Script/EnemyMovement.cs
+  artifactKey: Guid(34e1820ce75b2f34b918f8d80dfda22f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/EnemyMovement.cs using Guid(34e1820ce75b2f34b918f8d80dfda22f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3836de6c56e04f81abc3eaa82470e52b') in 0.020405 seconds 
+  Import took 0.031157 seconds .
+
