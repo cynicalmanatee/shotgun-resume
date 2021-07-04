@@ -26,6 +26,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("initialize");
         player = GameObject.Find("First Person Player").transform;
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
@@ -43,6 +44,7 @@ public class EnemyMovement : MonoBehaviour
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        Debug.Log("player is " + whatIsPlayer);
 
         if (!playerInSightRange && !playerInAttackRange)
         {
@@ -51,6 +53,7 @@ public class EnemyMovement : MonoBehaviour
         }
         if (playerInSightRange && !playerInAttackRange)
         {
+            Debug.Log("chase");
             ChasePlayer();
             animator.SetBool("isAlert", true);
         }
