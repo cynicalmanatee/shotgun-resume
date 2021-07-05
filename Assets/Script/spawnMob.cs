@@ -7,32 +7,43 @@ public class spawnMob : MonoBehaviour
 
     public GameObject[]  PrefabtoSpawn;
 
-    public float spawnInterval = 2f;
+    public AudioSource[] spawnSound;
 
-    public float spawnTime;
+    public float spawnInterval = 2.0f;
 
     public bool isSpawn;
     // Start is called before the first frame update
     public void Start()
     {
-        spawnTime = spawnInterval;
+        StartCoroutine(setSpawn());
     }
-
+    IEnumerator setSpawn()
+    {
+        while (true)
+        {
+            if (isSpawn)
+            {
+                yield return new WaitForSeconds(spawnInterval);
+                Debug.Log("spawn trigger");
+                spawn();
+            }
+            else
+            {
+                yield return new WaitForSeconds(spawnInterval);
+            }
+        }
+    }
 
     public void spawn()
     {
-        spawnInterval -= Time.deltaTime;
-        Debug.Log(spawnInterval);
-        if (spawnInterval <= 0 && isSpawn)
-        {
-            int x = Random.Range(0,PrefabtoSpawn.Length-1);
-            Instantiate(PrefabtoSpawn[x], transform.position, Quaternion.identity);
-            spawnInterval = spawnTime;
-        }
+
+        int enemytype = Random.Range(0,PrefabtoSpawn.Length);
+        int spawnsoundtype = Random.Range(0,spawnSound.Length);
+        Instantiate(PrefabtoSpawn[enemytype], transform.position, Quaternion.identity);
+        spawnSound[spawnsoundtype].Play();
     }
     // Update is called once per frame
     public void Update()
     {
-        spawn();
     }
 }
