@@ -24,7 +24,7 @@ public class BossSpawn : MonoBehaviour
                 Random.Range(0, spawnArea),
                 Random.Range(me.z - spawnArea, me.z + spawnArea));
         a.transform.position = spawn;
-        Debug.Log("Something Spawned");
+        // Debug.Log("Something Spawned");
     }
 
     IEnumerator attackWave()

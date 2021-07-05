@@ -8,7 +8,7 @@ public class destroy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Gottem!");
+            // Debug.Log("Gottem!");
             Destroy (gameObject);
         }
     }

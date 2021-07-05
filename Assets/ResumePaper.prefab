@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6991978601010582562}
   - component: {fileID: -9023384333667368052}
   - component: {fileID: 8828362669653203745}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ResumePaper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,3 +125,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905ba0863422d0a4e863272cd8047a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 10
