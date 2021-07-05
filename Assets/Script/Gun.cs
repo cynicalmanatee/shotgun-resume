@@ -12,6 +12,7 @@ public class Gun : MonoBehaviour
     public GameObject impactEffect;
     public float nextFire = 0.0f;
 
+    public AudioSource bang;
     public Ammo ammo;
     public GameManager gameManager;
 
@@ -48,6 +49,7 @@ public class Gun : MonoBehaviour
     void Shoot()
     {
         muzzleFlash.Play();
+        bang.Play();
         ammo.ShootAmmo();
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
