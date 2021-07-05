@@ -1,15 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class destroy : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public float health = 50f;
+
+    public GameObject Boss;
+
+    public void TakeDamage(float amount)
     {
-        if (other.gameObject.CompareTag("Player"))
+        health -= amount;
+        if (health <= 0f)
         {
-            // Debug.Log("Gottem!");
-            Destroy (gameObject);
+            Die();
         }
+    }
+
+    void Die()
+    {
+        Boss.GetComponent<BossSpawn>().loseHealth();
+        Destroy (gameObject);
     }
 }

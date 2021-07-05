@@ -10,9 +10,16 @@ public class BossSpawn : MonoBehaviour
 
     public float spawnArea = 100f;
 
+    public int health = 10;
+
     void Start()
     {
         StartCoroutine(attackWave());
+    }
+
+    public void loseHealth()
+    {
+        health--;
     }
 
     private void spawnAttack()
@@ -39,5 +46,9 @@ public class BossSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (health <= 0)
+        {
+            Destroy (gameObject);
+        }
     }
 }
