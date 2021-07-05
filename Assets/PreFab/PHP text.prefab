@@ -174,8 +174,7 @@ GameObject:
   - component: {fileID: 2971278978292537220}
   - component: {fileID: 4140274079535995548}
   - component: {fileID: 2172447968532331485}
-  - component: {fileID: 4696193531183603041}
-  - component: {fileID: 4073579650276616772}
+  - component: {fileID: 720432742142547372}
   m_Layer: 0
   m_Name: PHP text
   m_TagString: Untagged
@@ -269,7 +268,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4696193531183603041
+--- !u!114 &720432742142547372
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,18 +280,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd02ea74986253e41b257262f9c7b27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 100
   health: 1
---- !u!114 &4073579650276616772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5755604163226827421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b029f8c2bd177494a875485efbd57a74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boss: {fileID: 8668429817747091039, guid: 0491f52f481556c4b8f79428c9892023, type: 3}
