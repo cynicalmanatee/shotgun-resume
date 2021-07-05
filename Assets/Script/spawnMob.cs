@@ -10,7 +10,6 @@ public class spawnMob : MonoBehaviour
     public AudioSource[] spawnSound;
 
     public float spawnInterval = 2.0f;
-
     public bool isSpawn;
     // Start is called before the first frame update
     public void Start()
@@ -41,6 +40,7 @@ public class spawnMob : MonoBehaviour
         int spawnsoundtype = Random.Range(0,spawnSound.Length);
         Instantiate(PrefabtoSpawn[enemytype], transform.position, Quaternion.identity);
         spawnSound[spawnsoundtype].Play();
+
     }
     // Update is called once per frame
     public void Update()

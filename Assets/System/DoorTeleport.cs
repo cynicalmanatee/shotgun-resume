@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class DoorTeleport : MonoBehaviour{
 
     public Text text;
+    public GameManager gameManager;
 
     void Start() {
         text.text = "";
@@ -19,6 +20,7 @@ public class DoorTeleport : MonoBehaviour{
     private void OnTriggerStay(Collider other) {
         if (Input.GetKey(KeyCode.E)) {
             SceneManager.LoadScene (sceneBuildIndex: 1);
+            gameManager.runTimer = true;
         }
     }
 

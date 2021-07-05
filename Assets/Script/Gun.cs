@@ -25,25 +25,28 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
+        if (!gameManager.paused)
         {
-            if (ammo.remainingAmmo >= 1)
+            if (Input.GetButtonDown("Fire1") && Time.time > nextFire && !ammo.reloading)
             {
-                nextFire = Time.time + fireRate;
-                Shoot();
+                if (ammo.remainingAmmo >= 1)
+                {
+                    nextFire = Time.time + fireRate;
+                    Shoot();
+                }
+                else
+                {
+                    Debug.Log("No ammo!");
+                }
             }
-            else
+
+            if (Input.GetButtonDown("Fire2"))
             {
-                Debug.Log("No ammo!");
+                Reload();
+                Debug.Log("RELOADING...");
             }
         }
 
-        if (Input.GetButtonDown("Fire2")) {
-            Reload();
-            nextFire = Time.time + 3f;
-            Debug.Log("RELOADING...");
-        }
     }
 
     void Shoot()
@@ -67,11 +70,11 @@ public class Gun : MonoBehaviour
             {
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
-            Vector3 spread = new Vector3(UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2));
-            Vector3 spread2 = new Vector3(UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2));
-            Vector3 spread3 = new Vector3(UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2));
-            Vector3 spread4 = new Vector3(UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2));
-            Vector3 spread5 = new Vector3(UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2),UnityEngine.Random.Range(-2, 2));
+            Vector3 spread = new Vector3(UnityEngine.Random.Range(-2, 2), UnityEngine.Random.Range(-2, 2), UnityEngine.Random.Range(-2, 2));
+            Vector3 spread2 = new Vector3(UnityEngine.Random.Range(-2, 2), UnityEngine.Random.Range(-2, 2), UnityEngine.Random.Range(-2, 2));
+            Vector3 spread3 = new Vector3(UnityEngine.Random.Range(-2, 2), UnityEngine.Random.Range(-2, 2), UnityEngine.Random.Range(-2, 2));
+            Vector3 spread4 = new Vector3(UnityEngine.Random.Range(-2, 2), UnityEngine.Random.Range(-2, 2), UnityEngine.Random.Range(-2, 2));
+            Vector3 spread5 = new Vector3(UnityEngine.Random.Range(-2, 2), UnityEngine.Random.Range(-2, 2), UnityEngine.Random.Range(-2, 2));
             GameObject impactGO = Instantiate(impactEffect, hit.point + spread, Quaternion.LookRotation(hit.normal));
             GameObject impactGO2 = Instantiate(impactEffect, hit.point + spread2, Quaternion.LookRotation(hit.normal));
             GameObject impactGO3 = Instantiate(impactEffect, hit.point + spread3, Quaternion.LookRotation(hit.normal));
@@ -86,7 +89,8 @@ public class Gun : MonoBehaviour
     }
 
 
-    void Reload() {
+    void Reload()
+    {
         ammo.ReloadAmmo();
     }
 }

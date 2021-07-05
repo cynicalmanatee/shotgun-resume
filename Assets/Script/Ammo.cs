@@ -7,45 +7,34 @@ public class Ammo : MonoBehaviour
 {
     public int maxAmmo = 12;
     public int remainingAmmo = 12;
-    public bool isFiring;
+    public float printTime;
+    public float donePrint;
+    public bool reloading;
     public Text ammoDisplay;
 
     void Start()
     {
         maxAmmo = 12;
         remainingAmmo = 12;
+        printTime = 2.0f;
+        reloading = false;
         ammoDisplay.text = remainingAmmo + "/" + maxAmmo;
     }
 
     void Update()
     {
-        // if (Input.GetButtonDown("Fire1"))
-        // {
-        //     isFiring = true;
-        // }
-        // else
-        // {
-        //     isFiring = false;
-        // }
-
-        // if (isFiring && remainingAmmo > 0)
-        // {
-        //     ammoDisplay.text = remainingAmmo + "/" + maxAmmo;
-        // }
-
-        // if (Input.GetMouseButtonDown(1) && !isFiring)
-        // {
-        //     ammoDisplay.text = "Reloading...";
-        //     ReloadAmmo();
-        //     ammoDisplay.text = remainingAmmo + "/" + maxAmmo;
-        // }
+        if (reloading && Time.time > donePrint) {
+            remainingAmmo = maxAmmo;
+            ammoDisplay.text = remainingAmmo + "/" + maxAmmo;
+            reloading = false;
+        }
     }
 
     public void ReloadAmmo()
     {
-        ammoDisplay.text = "Reloading...";
-        remainingAmmo = maxAmmo;
-        ammoDisplay.text = remainingAmmo + "/" + maxAmmo;
+        ammoDisplay.text = "Printing...";
+        reloading = true;
+        donePrint = Time.time + printTime;
     }
 
     public void ShootAmmo()
