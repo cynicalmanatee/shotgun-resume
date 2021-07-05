@@ -9,8 +9,6 @@ public class EnemyMovement : MonoBehaviour
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
 
-    public float health;
-
     //patrolling
     public Vector3 walkPoint;
     bool walkPointSet;
