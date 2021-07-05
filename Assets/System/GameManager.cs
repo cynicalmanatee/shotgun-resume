@@ -86,10 +86,12 @@ public class GameManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             hud.SetActive(false);
             pauseScreen.SetActive(true);
+            Time.timeScale = 0;
         } else {
             Cursor.lockState = CursorLockMode.Locked;
             hud.SetActive(true);
             pauseScreen.SetActive(false);
+            Time.timeScale = 1;
         }
         paused = !paused;
     }

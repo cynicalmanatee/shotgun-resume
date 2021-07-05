@@ -96,11 +96,10 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
-  health: 100
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 30
   timeBetweenAttacks: 1
-  sightRange: 15
+  sightRange: 30
   attackRange: 1
   playerInSightRange: 0
   playerInAttackRange: 0
