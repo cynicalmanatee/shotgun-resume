@@ -3497,7 +3497,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_small2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: df0c88b4d5453b1419a416ecaf4366e2, type: 3}
 --- !u!1001 &905440446
 PrefabInstance:
@@ -3686,7 +3687,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1165662024228974164, guid: 3031c5e10bbb3424585f66fc1a187924, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3031c5e10bbb3424585f66fc1a187924, type: 3}
 --- !u!4 &929579916 stripped
 Transform:
@@ -4889,11 +4891,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b1b38ad56a221f4bb6ad963a1996883, type: 3}
---- !u!1 &1137259211 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2596756932164814267, guid: df0c88b4d5453b1419a416ecaf4366e2, type: 3}
-  m_PrefabInstance: {fileID: 905321683}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1149172359 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4657047982645578, guid: aef7c887e1f419b45b3e480ff017b110, type: 3}
@@ -5026,7 +5023,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 9dc021f5a2d043646b0f0b94215a9e22, type: 3}
 --- !u!4 &1174824526 stripped
 Transform:
@@ -7879,11 +7877,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aef7c887e1f419b45b3e480ff017b110, type: 3}
---- !u!1 &1761203500 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7050660099297252177, guid: 2e867acb0012a0547af163ff016fd77f, type: 3}
-  m_PrefabInstance: {fileID: 135783798}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1761683427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8489,11 +8482,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4657047982645578, guid: aef7c887e1f419b45b3e480ff017b110, type: 3}
   m_PrefabInstance: {fileID: 1049390919}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1844574840 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8253854016116664353, guid: 9dc021f5a2d043646b0f0b94215a9e22, type: 3}
-  m_PrefabInstance: {fileID: 1173784544}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1848917232
 PrefabInstance:
@@ -9652,11 +9640,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b1b38ad56a221f4bb6ad963a1996883, type: 3}
---- !u!1 &1983973610 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2023049854569181689, guid: 3031c5e10bbb3424585f66fc1a187924, type: 3}
-  m_PrefabInstance: {fileID: 927881798}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1990830147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4561544271246036, guid: 9b1b38ad56a221f4bb6ad963a1996883, type: 3}
@@ -10611,19 +10594,19 @@ PrefabInstance:
     - target: {fileID: 6722053690967667560, guid: a62175795de146b4785bee6476e3dd84, type: 3}
       propertyPath: PrefabtoSpawn.Array.data[0]
       value: 
-      objectReference: {fileID: 1983973610}
+      objectReference: {fileID: 2023049854569181689, guid: 3031c5e10bbb3424585f66fc1a187924, type: 3}
     - target: {fileID: 6722053690967667560, guid: a62175795de146b4785bee6476e3dd84, type: 3}
       propertyPath: PrefabtoSpawn.Array.data[1]
       value: 
-      objectReference: {fileID: 1137259211}
+      objectReference: {fileID: 2596756932164814267, guid: df0c88b4d5453b1419a416ecaf4366e2, type: 3}
     - target: {fileID: 6722053690967667560, guid: a62175795de146b4785bee6476e3dd84, type: 3}
       propertyPath: PrefabtoSpawn.Array.data[2]
       value: 
-      objectReference: {fileID: 1844574840}
+      objectReference: {fileID: 8253854016116664353, guid: 9dc021f5a2d043646b0f0b94215a9e22, type: 3}
     - target: {fileID: 6722053690967667560, guid: a62175795de146b4785bee6476e3dd84, type: 3}
       propertyPath: PrefabtoSpawn.Array.data[3]
       value: 
-      objectReference: {fileID: 1761203500}
+      objectReference: {fileID: 7050660099297252177, guid: 2e867acb0012a0547af163ff016fd77f, type: 3}
     - target: {fileID: 6722053690967667561, guid: a62175795de146b4785bee6476e3dd84, type: 3}
       propertyPath: m_Name
       value: 'Spawner '
