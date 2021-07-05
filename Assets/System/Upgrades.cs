@@ -32,6 +32,13 @@ public class Upgrades : MonoBehaviour
         }
     }
 
+    void Update() {
+        if (displayPanel && Input.GetButtonDown("Cancel"))
+        {
+            toggleDisplay();
+        }
+    }
+
     public bool ableToUpgrade(int money, int index)
     {
         return (upgrades[index] < maxLevels[index] && money >= upgradeCost[upgrades[index]]);
@@ -66,5 +73,6 @@ public class Upgrades : MonoBehaviour
     {
         displayPanel = !displayPanel;
         panel.SetActive(displayPanel);
+        gameManager.togglePauseScreen();
     }
 }
