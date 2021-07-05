@@ -54,23 +54,6 @@ public class GameManager : MonoBehaviour
             // Some sort of pause menu functionality here
         }
 
-    }
-
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            Debug.Log("Escape is being pressed.");
-            // Some sort of pause menu functionality here
-        }
-
-        // Increment timer if not paused
-        if (!paused)
-        {
-            timer += Time.deltaTime;
-            displayTimer.text = getCurrentTime().ToString();
-        }
-
         if (timer >= timeLimit)
         {
             // Something to do once the game reaches the time limit
