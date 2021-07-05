@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Office.unity
     guid: e5ce7d7ed7c5c0849842f7d97eab63b5
+  - enabled: 1
+    path: Assets/Scenes/boss room.unity
+    guid: a92fa06ecc7ebae48b303a597d518837
   m_configObjects: {}

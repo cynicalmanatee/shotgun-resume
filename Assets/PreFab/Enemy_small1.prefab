@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  bossPercent: 100
 --- !u!65 &8943120239927921693
 BoxCollider:
   m_ObjectHideFlags: 0

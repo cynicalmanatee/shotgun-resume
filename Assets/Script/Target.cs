@@ -18,7 +18,7 @@ public class Target : MonoBehaviour
 
     void Die()
     {
-        if (Random.Range(0f, 100f) == bossPercent)
+        if (Random.Range(0f, 100f) <= bossPercent)
         {
             SceneManager
                 .LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
