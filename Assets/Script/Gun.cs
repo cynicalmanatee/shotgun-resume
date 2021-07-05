@@ -41,7 +41,7 @@ public class Gun : MonoBehaviour
 
         if (Input.GetButtonDown("Fire2")) {
             Reload();
-            nextFire = Time.time + 3f;
+            nextFire = Time.time + 1f;
             Debug.Log("RELOADING...");
         }
     }
