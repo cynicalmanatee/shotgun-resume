@@ -40,9 +40,9 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-
         if (!playerInSightRange && !playerInAttackRange)
         {
             Patroling();
@@ -54,14 +54,15 @@ public class EnemyMovement : MonoBehaviour
             ChasePlayer();
             animator.SetBool("isAlert", true);
         }
-
         if (playerInAttackRange && playerInAttackRange)
         {
             AttackPlayer();
             // Debug.Log("attk");
             animator.SetBool("isAlert", false);
         }
+
     }
+
 
     private void Patroling()
     {
