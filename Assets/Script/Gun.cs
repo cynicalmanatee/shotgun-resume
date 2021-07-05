@@ -46,7 +46,6 @@ public class Gun : MonoBehaviour
                 Debug.Log("RELOADING...");
             }
         }
-
     }
 
     void Shoot()

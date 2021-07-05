@@ -12,8 +12,12 @@ public class Ammo : MonoBehaviour
     public bool reloading;
     public Text ammoDisplay;
 
+    public Vector3 reloadAnimation;
+    Vector3 originalRotation;
+
     void Start()
     {
+        originalRotation = transform.localEulerAngles;
         maxAmmo = 12;
         remainingAmmo = 12;
         printTime = 2.0f;
@@ -28,6 +32,22 @@ public class Ammo : MonoBehaviour
             ammoDisplay.text = remainingAmmo + "/" + maxAmmo;
             reloading = false;
         }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            StartReload();
+        } else if (Input.GetButtonUp("Fire2")) {
+            StopReload();
+        }
+    }
+
+    private void StartReload()
+    {
+        transform.localEulerAngles += reloadAnimation;
+    }
+
+    private void StopReload()
+    {
+        transform.localEulerAngles = originalRotation;
     }
 
     public void ReloadAmmo()
