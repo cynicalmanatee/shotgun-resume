@@ -21,7 +21,7 @@ public class Upgrades : MonoBehaviour
     void Start()
     {
         displayPanel = false;
-        panel.SetActive(false);
+        panel.SetActive(displayPanel);
         updateUpgrades();
 
         //Code derived from: https://answers.unity.com/questions/1376530/add-listeners-to-array-of-buttons.html
@@ -29,6 +29,14 @@ public class Upgrades : MonoBehaviour
         {
             int closureIndex = i; // Prevents the closure problem
             upgradeButtons[closureIndex].onClick.AddListener(() => addUpgrade(closureIndex));
+        }
+    }
+
+    void Update() {
+        if (displayPanel && Input.GetButtonDown("Cancel"))
+        {
+            displayPanel = false;
+            panel.SetActive(displayPanel);
         }
     }
 

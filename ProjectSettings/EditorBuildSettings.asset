@@ -11,10 +11,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/MenuV2.unity
-    guid: 8d3ac24ae15df5145a6822f73b740399
-  - enabled: 1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/Scene_Small_Office.unity
     guid: 75b2bf52ad996b842a460ba9d48702aa
+  - enabled: 1
+    path: Assets/Scenes/MainMenuFinal.unity
+    guid: c5da67fed5665c14b9e81a990d683b5c
+  - enabled: 1
+    path: Assets/Scenes/Office.unity
+    guid: e5ce7d7ed7c5c0849842f7d97eab63b5
   m_configObjects: {}
