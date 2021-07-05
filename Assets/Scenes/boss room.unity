@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37312284, g: 0.38074222, b: 0.35872623, a: 1}
+  m_IndirectSpecularColor: {r: 0.37312242, g: 0.3807421, b: 0.35872674, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -236,6 +236,70 @@ PrefabInstance:
       objectReference: {fileID: 800559923}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21cab0047420d47418d9cfe11f9693db, type: 3}
+--- !u!114 &47868640 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4985326664264300520, guid: 21cab0047420d47418d9cfe11f9693db, type: 3}
+  m_PrefabInstance: {fileID: 47868639}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853cd1d93d5a70745819b12a53d1c15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &47868641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4985326664734500532, guid: 21cab0047420d47418d9cfe11f9693db, type: 3}
+  m_PrefabInstance: {fileID: 47868639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &47868642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47868641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853cd1d93d5a70745819b12a53d1c15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAmmo: 12
+  remainingAmmo: 12
+  printTime: 0
+  donePrint: 0
+  reloading: 0
+  ammoDisplay: {fileID: 0}
+  reloadAnimation: {x: 15, y: 0, z: 0}
+--- !u!114 &47868643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47868641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c4777aaa053b643a913ee5ee477734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upRecoil: {x: 0, y: 0, z: 0}
+  ammo: {fileID: 47868640}
+--- !u!114 &47868644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47868641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 076919eccd29ecc4692d3ff41d3ef6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 0.3
+  maxAmount: 0.6
+  smoothAmount: 6
 --- !u!1001 &96340060
 PrefabInstance:
   m_ObjectHideFlags: 0
