@@ -1,4 +1,4 @@
-# shotgun-resume
+# Shotgun Resume
 A realistic job hunt simulator developed for [AtlasHacks2 2021](https://devpost.com/software/placeholder-g1ncqu).
 
 ## Motivation
